@@ -1,0 +1,15 @@
+PREFIX prism: <https://prismdb.takanakahiko.me/prism-schema.ttl#>
+
+SELECT concat("\n;; okuri-ari entries.\n;; okuri-nasi entries.\n\n",
+group_concat(concat(replace(?ckana, " ", ""), " /", replace(?cname, " ", ""), ";[prismdb] ", ?cclass, if(bound(?ccv), concat(" CV:", ?ccv), ""), "/"); separator="\n"),
+"\n")
+WHERE {
+    ?c a prism:Character;
+        prism:name ?cname;
+        prism:name_kana ?ckana;
+        a/rdfs:label ?cclass.
+    optional {?c prism:cv ?ccv.}
+    bind("" as ?g)
+}
+group by ?g
+
