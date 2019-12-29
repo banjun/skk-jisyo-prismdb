@@ -2,7 +2,7 @@ name: re-generate
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '0 */12 * * *'
 
 jobs:
   re-generate:
