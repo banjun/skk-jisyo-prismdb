@@ -2,13 +2,14 @@ name: re-generate
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '* * * * *'
 
 jobs:
   re-generate:
-    runs-on: macos-latest
+    runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v1
+    - run: brew install nkf
     - run: sh gen.sh
     - uses: gr2m/create-or-update-pull-request-action@v1.x
       env:
