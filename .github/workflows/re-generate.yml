@@ -19,3 +19,4 @@ jobs:
         body: "Automatically update SKK-JISYO"
         branch: "re-generate-skk-jisyo"
         commit-message: "🤖 Automatically update SKK-JISYO"
+        author: 'banjun <banjun@gmail.com>'
