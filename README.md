@@ -10,8 +10,9 @@
 | ファイル名 | 辞書の内容 |
 |---|---|
 | [SKK-JISYO.prismdb.all.utf8](https://raw.githubusercontent.com/banjun/skk-jisyo-prismdb/master/SKK-JISYO.prismdb.all.utf8) | 下記全てを結合してソート済み |
-| (To Be Generated) | 登場人物 |
-| (To Be Generated) | 曲名 |
+| [SKK-JISYO.prismdb.characters.utf8](https://raw.githubusercontent.com/banjun/skk-jisyo-prismdb/master/SKK-JISYO.prismdb.characters.utf8) | 登場人物 |
+| [SKK-JISYO.prismdb.songs.utf8](https://raw.githubusercontent.com/banjun/skk-jisyo-prismdb/master/SKK-JISYO.prismdb.songs.utf8) | 曲名 |
+| [SKK-JISYO.prismdb.teams.utf8](https://raw.githubusercontent.com/banjun/skk-jisyo-prismdb/master/SKK-JISYO.prismdb.teams.utf8)  | チーム名 |
 | (To Be Generated)  | : |
 
 ## 動作確認済みSKK
