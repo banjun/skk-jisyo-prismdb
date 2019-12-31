@@ -1,14 +1,21 @@
 PREFIX prism: <https://prismdb.takanakahiko.me/prism-schema.ttl#>
 
 SELECT concat("\n;; okuri-ari entries.\n;; okuri-nasi entries.\n\n",
-group_concat(concat(replace(?skana, " ", ""), " /", replace(?sname, " ", ""), ";[prismdb] ", ?sclass, "/"); separator="\n"),
+group_concat(concat(replace(?skana, " ", ""), " /", replace(?sname, " ", ""), ";[prismdb] ", ?sclass, if(?smembers = "", "", concat(" (", ?smembers, ")")), "/"); separator="\n"),
 "\n")
 WHERE {
-    ?s a prism:Team;
-        prism:name ?sname;
-        prism:name_kana ?skana;
-        a/rdfs:label ?sclass.
-    bind("" as ?g)
+  {
+    SELECT str(sample(?sname)) as ?sname str(sample(?skana)) as ?skana str(sample(?sclass)) as ?sclass group_concat(?smember; separator=", ") as ?smembers
+    WHERE {
+        ?s a prism:Team;
+            prism:name ?sname;
+            prism:name_kana ?skana;
+            a/rdfs:label ?sclass.
+        optional {?s prism:member/prism:name ?smember.}
+    }
+    group by ?s
+  }
+  bind("" as ?g)
 }
 group by ?g
 
