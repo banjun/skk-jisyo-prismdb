@@ -1,0 +1,14 @@
+PREFIX prism: <https://prismdb.takanakahiko.me/prism-schema.ttl#>
+
+SELECT concat("\n;; okuri-ari entries.\n;; okuri-nasi entries.\n\n",
+group_concat(concat(replace(?skana, " ", ""), " /", ?sname, ";[prismdb] ", ?sclass, "/"); separator="\n"),
+"\n")
+WHERE {
+    ?s a prism:Song;
+        prism:name ?sname;
+        prism:name_kana ?skana;
+        a/rdfs:label ?sclass.
+    bind("" as ?g)
+}
+group by ?g
+
