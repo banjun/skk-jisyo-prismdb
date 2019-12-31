@@ -1,7 +1,7 @@
 PREFIX prism: <https://prismdb.takanakahiko.me/prism-schema.ttl#>
 
 SELECT concat("\n;; okuri-ari entries.\n;; okuri-nasi entries.\n\n",
-group_concat(concat(replace(?skana, " ", ""), " /", replace(?sname, " ", ""), ";[prismdb] ", ?sclass, if(?smembers = "", "", concat(" (", ?smembers, ")")), "/"); separator="\n"),
+group_concat(concat(replace(?skana, " ", ""), " /", ?sname, ";[prismdb] ", ?sclass, if(?smembers = "", "", concat(" (", ?smembers, ")")), "/"); separator="\n"),
 "\n")
 WHERE {
   {
