@@ -11,6 +11,9 @@ jobs:
     - uses: actions/checkout@v2
     - run: brew install nkf
     - run: sh gen.sh
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
     - uses: peter-evans/create-pull-request@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
