@@ -8,17 +8,15 @@ jobs:
   re-generate:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - run: brew install nkf
     - run: sh gen.sh
-    - uses: peter-evans/create-pull-request@v1
+    - uses: peter-evans/create-pull-request@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "🤖 Automatically update SKK-JISYO"
-        author-email: banjun@gmail.com
-        author-name: banjun
+        author: banjun <banjun@gmail.com>
         title: 'Update the generated SKK-JISYO'
         body: |
             Automatically update SKK-JISYO
         branch: re-generate-skk-jisyo
-        branch-suffix: none
