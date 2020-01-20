@@ -11,4 +11,8 @@ teams_encoded=$(nkf -WwMQ gen-teams.rq | sed -e 's/=$//g' | tr = % | tr -d '\n')
 teams_result=$(curl -s --fail "https://prismdb.takanakahiko.me/sparql?default-graph-uri=&query=$teams_encoded&format=text%2Fcsv" | tail +3 | sed '$d' | LC_ALL=C sort)
 echo "$teams_result" | grep ';; okuri-nasi' > /dev/null && echo "$teams_result" > SKK-JISYO.prismdb.teams.utf8
 
-cat SKK-JISYO.prismdb.{characters,songs,teams}.utf8 | LC_ALL=C sort | uniq > SKK-JISYO.prismdb.all.utf8
+brands_encoded=$(nkf -WwMQ gen-brands.rq | sed -e 's/=$//g' | tr = % | tr -d '\n')
+brands_result=$(curl -s --fail "https://prismdb.takanakahiko.me/sparql?default-graph-uri=&query=$brands_encoded&format=text%2Fcsv" | tail +3 | sed '$d' | LC_ALL=C sort)
+echo "$brands_result" | grep ';; okuri-nasi' > /dev/null && echo "$brands_result" > SKK-JISYO.prismdb.brands.utf8
+
+cat SKK-JISYO.prismdb.{characters,songs,teams,brands}.utf8 | LC_ALL=C sort | uniq > SKK-JISYO.prismdb.all.utf8
