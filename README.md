@@ -13,6 +13,7 @@
 | [SKK-JISYO.prismdb.characters.utf8](https://raw.githubusercontent.com/banjun/skk-jisyo-prismdb/master/SKK-JISYO.prismdb.characters.utf8) | 登場人物 |
 | [SKK-JISYO.prismdb.songs.utf8](https://raw.githubusercontent.com/banjun/skk-jisyo-prismdb/master/SKK-JISYO.prismdb.songs.utf8) | 曲名 |
 | [SKK-JISYO.prismdb.teams.utf8](https://raw.githubusercontent.com/banjun/skk-jisyo-prismdb/master/SKK-JISYO.prismdb.teams.utf8)  | チーム名 |
+| [SKK-JISYO.prismdb.brands.utf8](https://raw.githubusercontent.com/banjun/skk-jisyo-prismdb/master/SKK-JISYO.prismdb.brands.utf8)  | ブランド名 |
 | (To Be Generated)  | : |
 
 ## 動作確認済みSKK
